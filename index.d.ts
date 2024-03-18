@@ -24,15 +24,15 @@ declare module "moleculer-db-adapter-prisma" {
     search?: string;
   }
 
-  export interface ConstructorOptions {
+  export interface ConstructorOptions<T = any> {
     log?: string[];
     enableSoftDelete?: boolean;
-    client?: PrismaClient
+    client?: T
   }
 
-  export default class PrismaDbAdapter {
+  export default class PrismaDbAdapter<T = any> {
 
-    constructor(opts?: ConstructorOptions);
+    constructor(opts?: ConstructorOptions<T>);
     /**
      * Initialize adapter
      *
