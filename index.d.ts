@@ -1,3 +1,5 @@
+import { Prisma, PrismaClient } from "@prisma/client";
+
 declare module "moleculer-db-adapter-prisma" {
   import { Service, ServiceBroker } from "moleculer";
 
@@ -25,6 +27,7 @@ declare module "moleculer-db-adapter-prisma" {
   export interface ConstructorOptions {
     log?: string[];
     enableSoftDelete?: boolean;
+    client?: PrismaClient
   }
 
   export default class PrismaDbAdapter {
