@@ -21,7 +21,7 @@ class PrismaDbAdapter {
 	constructor(opts = {}) {
 		this.opts = opts;
 		if(opts.client) {
-			this.db = client;
+			this.db = opts.client;
 		} else {
 			this.db = new PrismaClient({ log: opts.log || ["error"] });
 		}
